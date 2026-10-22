@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form verilerini görüntüleme</title>
+</head>
+<body>
+    <h1>Form verilerini görüntüleme</h1>
+    <p>Adınız: <span id="name"></span></p>
+    <p>E-posta: <span id="email"></span></p>
+    <p>Mesajınız: <span id="message"></span></p>
+    <p>Doğum Tarihi: <span id="dob"></span></p>
+    <p>Seçilen Renk: <span id="color"></span></p>
+    <p>Bültene Abone Ol: <span id="checkbox"></span></p>
+    <p>Seçilen Seçenek: <span id="options"></span></p>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+
+        document.getElementById('name').textContent = params.get('name') || '';
+        document.getElementById('email').textContent = params.get('email') || '';
+        document.getElementById('message').textContent = params.get('message') || '';
+        document.getElementById('dob').textContent = params.get('dob') || '';
+        document.getElementById('color').textContent = params.get('color') || '';
+        document.getElementById('checkbox').textContent = params.get('checkbox') ? 'Evet' : 'Hayır';
+        document.getElementById('options').textContent = params.get('options') || 'Seçenek seçilmedi';
+    </script>
+</body>
+</html>
